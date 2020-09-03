@@ -5,6 +5,26 @@ var tableData = data;
 //select table body
 var tbody = d3.select("ufo-table")
 console.log("welcome to the UFO sightings page...the truth is HERE!")
+
+// loop through table using object entries
+function displayData(something){ 
+    tbody.text("")
+    something.forEach(function(et_sighting){
+    new_tr = tbody.append("tr")
+    Object.entries(et_sighting).forEach(function([key, value]){
+        new_td = new_tr.append("td").text(value)	
+    })
+})}
+
+displayData(tableData)
+
+console.log("test")
+
+
+
+
+
+
 // // Loop Through `data` and console.log each UFO sighting object
 // data.forEach(function(UFOSightings) {
 //   console.log(UFOSightings);
@@ -17,22 +37,22 @@ console.log("welcome to the UFO sightings page...the truth is HERE!")
 // });
 
 // // Use `Object.entries` to console.log each UFO sighting info
-data.forEach(function(UFOSightings) {
-  console.log(UFOSightings);
-  var row = tbody.append("tr");
+// data.forEach(function(UFOSightings) {
+//   console.log(UFOSightings);
+//   var row = tbody.append("tr");
 
-  Object.entries(UFOSightings).forEach(function([key, value]) {
-    console.log(key, value);
-  });
-});
+//   Object.entries(UFOSightings).forEach(function([key, value]) {
+//     console.log(key, value);
+//   });
+// });
 
-data.forEach((UFOSightings) => {
-    var row = tbody.append("tr");
-    Object.entries(UFOSightings).forEach(([key, value]) => {
-      var cell = row.append("td");
-      cell.text(value);
-    });
-  });
+// data.forEach((UFOSightings) => {
+//     var row = tbody.append("tr");
+//     Object.entries(UFOSightings).forEach(([key, value]) => {
+//       var cell = row.append("td");
+//       cell.text(value);
+//     });
+//   });
 
 
 
